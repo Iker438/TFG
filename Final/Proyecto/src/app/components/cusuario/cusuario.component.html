@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="row">
+      <!-- Columna izquierda: Datos del usuario -->
+      <div class="col-md-6">
+        <h2>Datos del Usuario</h2>
+        <form>
+          <!-- Campos de datos del usuario -->
+          <div class="mb-3">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre" [(ngModel)]="userData.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" [(ngModel)]="userData.email">
+          </div>
+          <div class="mb-3">
+            <label for="inputFoto" class="form-label">Fotografía de Perfil</label>
+            <input type="file" class="form-control" id="inputFoto" (change)="onFileSelected($event)">
+            <button class="btn btn-primary mt-3" (click)="guardarCambios()">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+      <!-- Columna derecha: Libros favoritos -->
+      <div class="col-md-6">
+        <h2>Libros Favoritos</h2>
+        <!-- Lista de libros favoritos -->
+        <div class="card" *ngFor="let libro of librosFavoritos">
+          <img [src]="libro.imagen" class="card-img-top" alt="Imagen del libro">
+          <div class="card-body">
+            <h5 class="card-title">{{ libro.titulo }}</h5>
+            <p class="card-text">{{ libro.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

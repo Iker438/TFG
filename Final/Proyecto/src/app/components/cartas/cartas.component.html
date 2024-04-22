@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        
+        <img *ngIf="cartas && cartas.card_images && cartas.card_images[0]" [src]="cartas.card_images[0].image_url" class="card-img-top" alt="Imagen de la carta">
+        <h5 class="card-title">{{ cartas?.name }}</h5>
+        <p class="card-text">{{ cartas?.desc}}</p>
+        <p class="card-text"><strong>Tipo:</strong> {{ cartas?.type }}</p>
+</div>
