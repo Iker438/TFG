@@ -1,0 +1,47 @@
+/* Aplica a todas las letras dentro del menú de navegación */
+.navbar-nav .nav-link, 
+.navbar-nav .nav-link i, 
+.navbar-brand {
+  color: white !important;
+}
+
+/* Asegúrate de que el color del ícono de usuario también sea blanco y ajustar el tamaño */
+.navbar-nav .nav-link .fas {
+  color: white !important;
+  font-size: 1.5rem; /* Ajusta el tamaño del ícono según sea necesario */
+}
+
+/* Estilo para botones de sesión */
+.btn-outline-danger {
+  color: white !important;
+  border-color: white !important;
+}
+
+.btn-outline-danger:hover {
+  color: black !important;
+  background-color: white !important;
+  border-color: white !important;
+}
+
+/* Estilo para botones de "Iniciar sesión" y "Crear cuenta" para mantener sus colores originales */
+.btn-outline-success {
+  color: #198754 !important; /* Color verde original de Bootstrap */
+  border-color: #198754 !important;
+}
+
+.btn-outline-success:hover {
+  color: white !important;
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+
+.btn-outline-primary {
+  color: #0d6efd !important; /* Color azul original de Bootstrap */
+  border-color: #0d6efd !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}

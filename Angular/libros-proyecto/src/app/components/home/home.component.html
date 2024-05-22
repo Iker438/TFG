@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <!-- Buscador -->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Buscar libros..." [(ngModel)]="searchQuery">
+    <select class="form-select" [(ngModel)]="selectedGenre">
+      <option value="">Todos los géneros</option>
+      <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+    </select>
+    <button class="btn btn-outline-secondary" type="button" (click)="searchBooks()">Buscar</button>
+  </div>
+
+  <!-- Libros aleatorios -->
+  <h2>Libros aleatorios</h2>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let book of randomBooks" [@fadeIn]>
+      <div class="card" (click)="selectBook(book)">
+        <img src="{{ book.image }}" class="card-img-top" alt="{{ book.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Libros ordenados -->
+  <h2 class="mt-4">Libros ordenados</h2>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let book of filteredBooks" [@fadeIn]>
+      <div class="card" (click)="selectBook(book)">
+        <img src="{{ book.image }}" class="card-img-top" alt="{{ book.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <ng-template #bookModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">{{ selectedBook?.title }}</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <p>{{ selectedBook?.description }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" [ngClass]="{'btn-success': isFavorite(selectedBook)}" (click)="toggleFavorite(selectedBook)">
+        {{ isFavorite(selectedBook) ? 'Favorito' : 'Agregar a Favoritos' }}
+      </button>
+      <button type="button" class="btn btn-primary" (click)="openPdf(selectedBook?.pdf)">Leer</button>
+    </div>
+  </ng-template>
+</div>

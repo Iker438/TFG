@@ -1,0 +1,83 @@
+
+
+table{
+    box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75) !important;
+}
+
+
+.table-group-divider{
+    color: #483838 !important;
+}
+
+  tbody{
+    font-size: 1.2rem;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {/* los pares */
+    background-color:#C98474;
+  }
+
+
+
+  .table-striped tbody tr:not(odd) {/* los no pares */
+    background-color:#F2D388;
+  }
+
+
+  .table-striped tbody tr:nth-of-type(odd):hover {
+    background-color: #A7D2CB !important;
+  }
+
+
+  .myThead {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    background-color:#874C62;
+    color: white;
+    font-weight: 700;
+  }
+
+  .bi{
+    font-size: 1.1rem;
+  }
+  .bi:hover{
+    transition: 0.4s;
+  }
+
+  .card{
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+-webkit-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+-moz-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+  }
+
+  .bi-plus-circle-fill {
+    color: #C98474;
+  }
+
+  .text-bg-dark{
+    background-color: rgba(135, 76, 98, 0.651) !important;
+  }
+
+   .modal{
+    font-family: Helvetica, sans-serif;
+  }
+
+
+  .navPagination ul li button {
+    background: #874C62;
+    color: #C98474;
+  }
+
+  .navPagination ul li button:hover {
+    background: #C98474;
+    color: #874C62;
+  }
+
+  /* .text-bg-primary{
+   background-color: #e7dfdd73;
+
+  } */

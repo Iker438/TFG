@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- Agregar Comentario -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="card mt-4 text-bg-dark mb-4">
+        <div class="card-header">Agregar comentario</div>
+        <div class="card-body">
+          <textarea [(ngModel)]="newComment.message" cols="150" rows="4" class="form-control"></textarea>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-success float-end" (click)="addComment()">Enviar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <!-- Lista de Comentarios -->
+  <div class="row">
+    <table class="table table-striped mb-5">
+      <thead class="myThead">
+        <tr>
+          <td>Id</td>
+          <td>Mensaje</td>
+          <td>Usuario</td>
+          <td>📅 Fecha</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of comments">
+          <td>{{ comment.id }}</td>
+          <td>
+            <div *ngIf="editingComment && editingComment.id === comment.id">
+              <textarea [(ngModel)]="editingComment.message" cols="30" rows="3" class="form-control"></textarea>
+              <button class="btn btn-success btn-sm" (click)="saveComment()">Guardar</button>
+              <button class="btn btn-secondary btn-sm" (click)="cancelEdit()">Cancelar</button>
+            </div>
+            <div *ngIf="!editingComment || editingComment.id !== comment.id">
+              {{ comment.message }}
+            </div>
+          </td>
+          <td>{{ comment.user }}</td>
+          <td>{{ comment.date | date:'dd-MM-yyyy' }}</td>
+          <td>
+            <button class="btn btn-info mb-2" (click)="editComment(comment)"><i class="bi bi-pencil-square"></i></button>
+            <button class="btn btn-danger" (click)="deleteComment(comment.id)"><i class="bi bi-trash-fill"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
