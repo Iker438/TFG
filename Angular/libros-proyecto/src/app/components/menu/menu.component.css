@@ -45,3 +45,6 @@
   background-color: #0d6efd !important;
   border-color: #0d6efd !important;
 }
+.container-fluid{
+  --bs-gutter-x: 0; /* Establece el gutter horizontal a 0 */
+}
