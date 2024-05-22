@@ -1,16 +1,18 @@
-<h2>Login de usuario</h2>
-<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label class="form-label">Email</label>
-    <input type="text" class="form-control" formControlName="email">
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" formControlName="password">
-  </div>
-  <button class="btn btn-info" type="submit">Entra con Gmail</button>
-  <br>
-  <button class="btn btn-info" (click)="loginWithGoogle()">Entra con Google</button>
-  <button class="btn btn-info" [routerLink]="['/register']">Crea tu cuenta</button>
-</form>
-
+<div class="container">
+  <h2>Login de usuario</h2>
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="button-container">
+      <button class="btn btn-primary" type="submit">Entra con Gmail</button>
+      <button class="btn btn-google" type="button" (click)="loginWithGoogle()">Entra con Google</button>
+      <button class="btn btn-register" [routerLink]="['/register']">Crea tu cuenta</button>
+    </div>
+  </form>
+</div>
