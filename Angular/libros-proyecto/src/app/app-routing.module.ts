@@ -13,27 +13,31 @@ import { LibcrearComponent } from './components/libcrear/libcrear.component';
 import { ErrorComponent } from './components/error/error.component';
 import { JuegoComponent } from './components/juego/juego.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
-import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
+  // Ruta principal redirigida a '/main'
   { path: '', pathMatch: 'full', redirectTo: '/main' },
   {
     path: 'main',
     component: ErrorComponent,
+    // Redirigir a '/login' si no está autenticado
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
+  // Rutas
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'post', component: PostComponent, canActivate: [AuthGuard] },
-  { path: 'menu', component: MenuComponent },
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
-  { path: 'useredit', component: UsereditComponent, canActivate: [AuthGuard] }, 
   { path: 'register', component: RegisterComponent },
-  { path: 'foro', component: ForoComponent, canActivate: [AuthGuard] },
-  { path: 'libcrear', component: LibcrearComponent, canActivate: [AuthGuard] },
-  { path: 'favoritos', component: FavoritosComponent, canActivate: [AuthGuard]},
-  { path: 'juegos', component: JuegoComponent, canActivate: [AuthGuard] },
+  { path: 'menu', component: MenuComponent },
+  { path: 'post', component: PostComponent},
+  { path: 'user', component: UserComponent },
+  { path: 'useredit', component: UsereditComponent},
+  { path: 'foro', component: ForoComponent},
+  { path: 'libcrear', component: LibcrearComponent },
+  { path: 'favoritos', component: FavoritosComponent},
+  { path: 'juegos', component: JuegoComponent},
+  
+  // Ruta para manejar errores 404
   { path: '**', component: ErrorComponent }
 ];
 

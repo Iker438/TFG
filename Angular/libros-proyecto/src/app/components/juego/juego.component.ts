@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AfterViewInit, OnInit} from '@angular/core';
+import { AfterViewInit, OnInit } from '@angular/core';
 import { Food } from '../../model/game/food';
 import { Snake } from '../../model/game/snake';
 import { outsideGrid } from '../../model/game/gameboard-grid.util';
@@ -7,18 +7,17 @@ import { outsideGrid } from '../../model/game/gameboard-grid.util';
 @Component({
   selector: 'app-juego',
   templateUrl: './juego.component.html',
-  styleUrl: './juego.component.css'
+  styleUrls: ['./juego.component.css']
 })
-export class JuegoComponent {
+export class JuegoComponent implements OnInit, AfterViewInit {
 
   title = 'snakeGame1938web';
   gameBoard: any;
   snake = new Snake();
   food = new Food(this.snake);
 
-
-  lastRenderTime = 0
-  gameOver = false
+  lastRenderTime = 0;
+  gameOver = false;
 
   ngAfterViewInit() {
     this.gameBoard = document.querySelector('.game-board');
@@ -26,12 +25,12 @@ export class JuegoComponent {
   }
 
   ngOnInit(): void {
-    this.snake.listenToInputs();
+    this.snake.listenToInputs(); // Configura los listeners del teclado
   }
+
   dpadMovement(direction: string) {
     this.snake.input.setDirection(direction);
   }
-
 
   start(currentTime: any) {
     if (this.gameOver) {
@@ -69,7 +68,6 @@ export class JuegoComponent {
     this.gameBoard.classList.add('blur');
   }
 
-
   get snakeSpeed() {
     const score = this.food.currentScore;
     if (score < 10) {
@@ -84,4 +82,13 @@ export class JuegoComponent {
     return 7;
   }
 
+  restartGame() {
+    this.snake = new Snake();
+    this.food = new Food(this.snake);
+    this.gameOver = false;
+    this.lastRenderTime = 0;
+    this.gameBoard.classList.remove('blur');
+    window.requestAnimationFrame(this.start.bind(this));
+    this.snake.listenToInputs(); // Asegúrate de volver a configurar los listeners del teclado
+  }
 }

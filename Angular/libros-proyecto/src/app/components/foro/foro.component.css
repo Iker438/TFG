@@ -1,83 +1,179 @@
-
-
-table{
-    box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75) !important;
+/* Estilos existentes */
+table {
+  box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75) !important;
 }
 
-
-.table-group-divider{
-    color: #483838 !important;
+.table-group-divider {
+  color: #483838 !important;
 }
 
-  tbody{
-    font-size: 1.2rem;
-  }
+tbody {
+  font-size: 1.2rem;
+}
 
-  .table-striped tbody tr:nth-of-type(odd) {/* los pares */
-    background-color:#C98474;
-  }
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #C98474;
+}
 
+.table-striped tbody tr:not(odd) {
+  background-color: #F2D388;
+}
 
+.table-striped tbody tr:nth-of-type(odd):hover {
+  background-color: #A7D2CB !important;
+}
 
-  .table-striped tbody tr:not(odd) {/* los no pares */
-    background-color:#F2D388;
-  }
+.myThead {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  background-color: #874C62;
+  color: white;
+  font-weight: 700;
+}
 
+.bi {
+  font-size: 1.1rem;
+}
 
-  .table-striped tbody tr:nth-of-type(odd):hover {
-    background-color: #A7D2CB !important;
-  }
+.bi:hover {
+  transition: 0.4s;
+}
 
+.card {
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+  -webkit-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+  -moz-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+}
 
-  .myThead {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.2rem;
-    background-color:#874C62;
-    color: white;
-    font-weight: 700;
-  }
+.bi-plus-circle-fill {
+  color: #C98474;
+}
 
-  .bi{
-    font-size: 1.1rem;
-  }
-  .bi:hover{
-    transition: 0.4s;
-  }
+.text-bg-dark {
+  background-color: rgba(135, 76, 98, 0.651) !important;
+}
 
-  .card{
-    font-size: 1.1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
--webkit-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
--moz-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
-  }
+.modal {
+  font-family: Helvetica, sans-serif;
+}
 
-  .bi-plus-circle-fill {
-    color: #C98474;
-  }
+.navPagination ul li button {
+  background: #874C62;
+  color: #C98474;
+}
 
-  .text-bg-dark{
-    background-color: rgba(135, 76, 98, 0.651) !important;
-  }
+.navPagination ul li button:hover {
+  background: #C98474;
+  color: #874C62;
+}
 
-   .modal{
-    font-family: Helvetica, sans-serif;
-  }
+/* Complementos adicionales */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.card-header {
+  background-color: #874C62;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
 
-  .navPagination ul li button {
-    background: #874C62;
-    color: #C98474;
-  }
+.card-body {
+  background-color: #f0f8ff; /* AliceBlue background */
+}
 
-  .navPagination ul li button:hover {
-    background: #C98474;
-    color: #874C62;
-  }
+.card-footer {
+  background-color: #f0f8ff;
+  border-top: 1px solid #ccc;
+}
 
-  /* .text-bg-primary{
-   background-color: #e7dfdd73;
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 
-  } */
+textarea.form-control:focus {
+  border-color: #874C62;
+  outline: none;
+  box-shadow: 0 0 5px rgba(135, 76, 98, 0.2);
+}
+
+button.btn-success {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-success:hover {
+  background-color: #218838;
+}
+
+button.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-info:hover {
+  background-color: #138496;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Iconos para los botones de editar y eliminar */
+button.btn-info i,
+button.btn-danger i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+button.btn-info i.bi-pencil-square {
+  color: white;
+}
+
+button.btn-danger i.bi-trash-fill {
+  color: white;
+}
+.mb-2 {
+  margin-bottom: 0 !important;
+}

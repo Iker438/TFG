@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* AliceBlue background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #0056b3; /* Strong blue color */
+    margin-bottom: 20px;
+  }
+  
+  /* Input Group */
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input,
+  .input-group select,
+  .input-group button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-group select {
+    max-width: 200px; /* Ajustar el ancho máximo */
+    padding: 5px; /* Reducir el padding */
+  }
+  
+  .input-group button {
+    background-color: #0056b3; /* Strong blue color */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .input-group button:hover {
+    background-color: #004494; /* Darker blue */
+  }
+  
+  /* Book Cards */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card-body {
+    padding: 15px;
+    background-color: white;
+  }
+  
+  .card-title {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Strong blue */
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333; /* Darker red */
+  }
+  
+  .btn-success {
+    background-color: #28a745; /* Bootstrap success color */
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838; /* Darker green */
+  }
+  
+  /* Modal */
+  .modal-header {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+  }
+  
+  .modal-header .btn-close {
+    color: white;
+  }
+  
+  .modal-body {
+    padding: 20px;
+    background-color: #f0f8ff; /* AliceBlue background */
+  }
+  
+  .modal-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f0f8ff; /* AliceBlue background */
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 500ms ease-in;
+  }
+  

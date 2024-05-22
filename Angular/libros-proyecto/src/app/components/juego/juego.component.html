@@ -1,31 +1,31 @@
 <div class="container">
-    <p></p>
-    <p></p>
-    <h1>Juego SNAKE</h1>
-    <p></p>
-    <p></p>
-    <div  class="container2"  style="background-color: #282846" >
-      <div class="container2" #fullScreen>
-        <div class="score-card">
-          <div class="score-board">
-            <h1>Score</h1>
-          </div>
-          <div class="restart-button" >
-            RESTART
-          </div>
+  <p></p>
+  <p></p>
+  <h1>Juego SNAKE</h1>
+  <p></p>
+  <p></p>
+  <div class="container2" style="background-color: #282846">
+    <div class="container2" #fullScreen>
+      <div class="score-card">
+        <div class="score-board">
+          <h1>Score</h1>
         </div>
-        <div class="game-board">
+        <div class="restart-button" (click)="restartGame()">
+          RESTART
         </div>
       </div>
+      <div class="game-board"></div>
     </div>
   </div>
+</div>
+
 <!-- telefonos moviles-->
-  <div class="mobile-controls">
-    <h2>Pad para el teléfono</h2>
-    <nav class="o-pad">
-      <a class="up" (click)="dpadMovement('ArrowUp')"></a>
-      <a class="right" (click)="dpadMovement('ArrowRight')"></a>
-      <a class="down" (click)="dpadMovement('ArrowDown')"></a>
-      <a class="left" (click)="dpadMovement('ArrowLeft')"></a>
-    </nav>
-  </div>
+<div class="mobile-controls">
+  <h2>Pad para el teléfono</h2>
+  <nav class="o-pad">
+    <a class="up" (click)="dpadMovement('ArrowUp')"></a>
+    <a class="right" (click)="dpadMovement('ArrowRight')"></a>
+    <a class="down" (click)="dpadMovement('ArrowDown')"></a>
+    <a class="left" (click)="dpadMovement('ArrowLeft')"></a>
+  </nav>
+</div>

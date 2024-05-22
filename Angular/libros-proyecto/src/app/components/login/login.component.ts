@@ -22,8 +22,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit() {
     this.authService.login(this.formLogin.value)
@@ -33,6 +32,7 @@ export class LoginComponent implements OnInit {
       })
       .catch(error => console.log(error));
   }
+
   loginWithGoogle(): void {
     this.authService.loginWithGoogle()
       .then(response => {
@@ -40,10 +40,5 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       })
       .catch(error => console.log(error));
-  }
-  loginAsGuest(): void {
-    this.authService.loginAsGuest().then(() => {
-      this.router.navigate(['/home']);
-    }).catch(error => console.log(error));
   }
 }

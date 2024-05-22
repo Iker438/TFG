@@ -10,8 +10,7 @@
   </div>
   <button class="btn btn-info" type="submit">Entra con Gmail</button>
   <br>
+  <button class="btn btn-info" (click)="loginWithGoogle()">Entra con Google</button>
+  <button class="btn btn-info" [routerLink]="['/register']">Crea tu cuenta</button>
 </form>
 
-<button class="btn btn-info" (click)="loginWithGoogle()">Entra con Google</button>
-<button class="btn btn-info" (click)="loginAsGuest()">Entra como Invitado</button>
-<button class="btn btn-info" [routerLink]="['/register']">Crea tu cuenta</button>

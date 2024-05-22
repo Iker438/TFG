@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   selectedGenre: string = '';
   genres: string[] = ['Romance', 'Terror', 'Aventura', 'Historia', 'Fantasía', 'Ciencia Ficción', 'Cuentos', 'Poesía', 'Estudios', 'Recetas de cocina', 'Religión'];
   selectedBook: any = null;
+  sortOrder: string = 'random'; // 'random' or 'alphabetical'
 
   constructor(private http: HttpClient, private favoritesService: FavoritesService, private modalService: NgbModal) { }
 
@@ -34,12 +35,13 @@ export class HomeComponent implements OnInit {
       this.books = data;
       this.filteredBooks = this.books;
       this.getRandomBooks();
+      this.sortBooks();
     });
   }
 
   getRandomBooks() {
     const shuffled = this.books.sort(() => 0.5 - Math.random());
-    this.randomBooks = shuffled.slice(0, 5);
+    this.randomBooks = shuffled.slice(0, 4);
   }
 
   searchBooks() {
@@ -47,6 +49,15 @@ export class HomeComponent implements OnInit {
       book.title.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
       (this.selectedGenre === '' || book.genre === this.selectedGenre)
     );
+    this.sortBooks();
+  }
+
+  sortBooks() {
+    if (this.sortOrder === 'alphabetical') {
+      this.filteredBooks.sort((a, b) => a.title.localeCompare(b.title));
+    } else {
+      this.filteredBooks.sort(() => 0.5 - Math.random());
+    }
   }
 
   selectBook(book: any) {
@@ -72,5 +83,10 @@ export class HomeComponent implements OnInit {
 
   openPdf(pdfUrl: string) {
     window.open(pdfUrl, '_blank');
+  }
+
+  setSortOrder(order: string) {
+    this.sortOrder = order;
+    this.sortBooks();
   }
 }

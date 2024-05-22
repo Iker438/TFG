@@ -1,16 +1,15 @@
 <div class="container mt-5">
-    <h2>Mis Favoritos</h2>
-    <div class="row">
-      <div *ngFor="let libro of librosFavoritos" class="col-md-4">
-        <div class="card mb-4 shadow-sm" (click)="abrirPDF(libro)">
-          <img [src]="libro.image" class="card-img-top" alt="Portada del libro">
-          <div class="card-body">
-            <h5 class="card-title">{{ libro.title }}</h5>
-            <p class="card-text">{{ libro.description }}</p>
-          </div>
+  <h2>Mis Favoritos</h2>
+  <div class="row">
+    <div *ngFor="let libro of librosFavoritos" class="col-md-4">
+      <div class="card mb-4 shadow-sm" (click)="abrirPDF(libro)">
+        <img [src]="libro.image" class="card-img-top" alt="Portada del libro">
+        <div class="card-body">
+          <h5 class="card-title">{{ libro.title }}</h5>
+          <p class="card-text">{{ libro.description }}</p>
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="irAJuego()">Ir a Juego</button>
   </div>
-  
+  <button class="btn btn-primary" (click)="irAJuego()">Ir a Juego</button>
+</div>
