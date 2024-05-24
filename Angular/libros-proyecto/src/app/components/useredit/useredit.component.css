@@ -1,12 +1,14 @@
 /* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff; /* AliceBlue background */
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
+body,html {
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom, #87cefa, whitesmoke); /* Sky blue with a touch of yellow */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  transition: background-color 0.3s ease;
+}
+
   .container {
     max-width: 800px;
     margin: 0 auto;
@@ -80,4 +82,6 @@ body {
   .btn-primary:hover {
     background-color: #0056b3; /* Strong blue */
   }
-  
+  .mt-5 {
+    margin-top: 0 !important; 
+ }

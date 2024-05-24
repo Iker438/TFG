@@ -28,6 +28,12 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['favoritos']" (click)="navegarLogico('favoritos')">Libros Favoritos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['almacen']" (click)="navegarLogico('almacen')">Almacen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['contacto']" (click)="navegarLogico('contacto')">Contactanos</a>
+        </li>
       </ul>
       <div class="d-flex">
         <button *ngIf="(isLoggedIn() | async)" class="btn btn-outline-danger me-2" (click)="logout()">Cerrar sesión</button>
@@ -37,7 +43,7 @@
     </div>
   </nav>
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-11">
       <!-- Aquí puedes poner contenido adicional si es necesario -->
     </div>
   </div>

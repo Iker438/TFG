@@ -1,0 +1,28 @@
+  <html>
+    <div class="container mt-4">
+      <h2>Agregar Nuevo Libro</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Agregar Imagen</label>
+          <input type="file" id="imagen" (change)="onFileSelected($event, 'image')" accept="image/*" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Agregar Título</label>
+          <input type="text" id="titulo" [(ngModel)]="nuevoLibro.titulo" name="titulo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="genero" class="form-label">Agregar Género</label>
+          <input type="text" id="genero" [(ngModel)]="nuevoLibro.genero" name="genero" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Agregar Descripción</label>
+          <textarea id="descripcion" [(ngModel)]="nuevoLibro.descripcion" name="descripcion" class="form-control" rows="5" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="pdf" class="form-label">Agregar Archivo PDF</label>
+          <input type="file" id="pdf" (change)="onFileSelected($event, 'pdf')" accept=".pdf" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Libro</button>
+      </form>
+    </div>
+  </html>

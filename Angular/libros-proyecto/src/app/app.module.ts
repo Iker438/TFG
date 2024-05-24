@@ -29,6 +29,10 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
 import { JuegoComponent } from './components/juego/juego.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { AlamacenComponent } from './components/alamacen/alamacen.component';
+import { ForocompartirComponent } from './components/forocompartir/forocompartir.component';
+import { GuardarlibroComponent } from './components/guardarlibro/guardarlibro.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { FavoritosComponent } from './components/favoritos/favoritos.component';
     LibcrearComponent,
     JuegoComponent,
     FavoritosComponent,
+    ContactoComponent,
+    AlamacenComponent,
+    ForocompartirComponent,
+    GuardarlibroComponent,
     
   ],
   imports: [

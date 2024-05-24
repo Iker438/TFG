@@ -1,4 +1,14 @@
 /* Estilos existentes */
+body, html{
+  font-family: 'Times New Roman', Times, serif;
+
+  background: linear-gradient(to bottom, #87cefa, #fffacd); /* Sky blue with a touch of yellow */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
 table {
   box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);

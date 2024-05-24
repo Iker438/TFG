@@ -1,0 +1,26 @@
+
+<html>
+  <div class="container mt-4">
+  <h2>Contáctanos</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="tipoContacto" class="form-label">Asunto</label>
+      <select id="tipoContacto" class="form-select" [(ngModel)]="contacto.tipo" name="tipoContacto" required>
+        <option value="agregaTuLibro">Agrega tu libro</option>
+        <option value="problemasWeb">Problemas con la web</option>
+        <option value="problemasUsuarios">Problema con los usuarios</option>
+        <option value="otros">Otros</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="mensaje" class="form-label">Mensaje</label>
+      <textarea id="mensaje" class="form-control" [(ngModel)]="contacto.mensaje" name="mensaje" rows="5" required></textarea>
+    </div>
+    <div *ngIf="contacto.tipo === 'agregaTuLibro'" class="mb-3">
+      <label for="archivo" class="form-label">Subir archivo Word</label>
+      <input type="file" id="archivo" (change)="onFileSelected($event)" accept=".doc,.docx" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+</html>

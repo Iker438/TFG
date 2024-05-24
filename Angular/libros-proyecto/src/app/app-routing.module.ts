@@ -13,6 +13,10 @@ import { LibcrearComponent } from './components/libcrear/libcrear.component';
 import { ErrorComponent } from './components/error/error.component';
 import { JuegoComponent } from './components/juego/juego.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { AlamacenComponent } from './components/alamacen/alamacen.component';
+import { ForocompartirComponent } from './components/forocompartir/forocompartir.component';
+import { GuardarlibroComponent } from './components/guardarlibro/guardarlibro.component';
 
 const routes: Routes = [
   // Ruta principal redirigida a '/main'
@@ -36,7 +40,10 @@ const routes: Routes = [
   { path: 'libcrear', component: LibcrearComponent },
   { path: 'favoritos', component: FavoritosComponent},
   { path: 'juegos', component: JuegoComponent},
-  
+  { path: 'contacto', component: ContactoComponent},
+  { path: 'almacen', component: AlamacenComponent},
+  { path: 'forocompartir', component: ForocompartirComponent},
+  {path: 'guardarlibro', component: GuardarlibroComponent},
   // Ruta para manejar errores 404
   { path: '**', component: ErrorComponent }
 ];

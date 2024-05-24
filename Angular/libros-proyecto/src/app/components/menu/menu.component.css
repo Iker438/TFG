@@ -1,14 +1,26 @@
-/* Aplica a todas las letras dentro del menú de navegación */
-.navbar-nav .nav-link, 
-.navbar-nav .nav-link i, 
-.navbar-brand {
-  color: white !important;
+/* Fondo completo del menú: color gris azulado oscuro */
+.navbar {
+  background-color: #5a6f7d !important; /* Gris azulado oscuro */
 }
 
-/* Asegúrate de que el color del ícono de usuario también sea blanco y ajustar el tamaño */
-.navbar-nav .nav-link .fas {
+/* Nombre: color blanco, fuente Times New Roman, letras más grandes */
+.navbar-brand {
   color: white !important;
-  font-size: 1.5rem; /* Ajusta el tamaño del ícono según sea necesario */
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem; /* Aumenta el tamaño de las letras */
+}
+
+/* Letras del menú: color verde pasto, cambiar a azul cielo al pasar el cursor, letras más grandes */
+.navbar-nav .nav-link, 
+.navbar-nav .nav-link i {
+  color: #7CFC00 !important; /* Verde pasto */
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem; /* Aumenta el tamaño de las letras */
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link i:hover {
+  color: #87CEEB !important; /* Azul cielo */
 }
 
 /* Estilo para botones de sesión */
@@ -23,9 +35,9 @@
   border-color: white !important;
 }
 
-/* Estilo para botones de "Iniciar sesión" y "Crear cuenta" para mantener sus colores originales */
+/* Estilo para botones de "Iniciar sesión" y "Crear cuenta" */
 .btn-outline-success {
-  color: #198754 !important; /* Color verde original de Bootstrap */
+  color: #198754 !important; /* Verde original de Bootstrap */
   border-color: #198754 !important;
 }
 
@@ -36,7 +48,7 @@
 }
 
 .btn-outline-primary {
-  color: #0d6efd !important; /* Color azul original de Bootstrap */
+  color: #0d6efd !important; /* Azul original de Bootstrap */
   border-color: #0d6efd !important;
 }
 
@@ -45,6 +57,64 @@
   background-color: #0d6efd !important;
   border-color: #0d6efd !important;
 }
-.container-fluid{
+
+/* Fondo del menú con estela verde oscuro que se disipa */
+.navbar {
+  position: relative;
+}
+
+/* Añadir estela alrededor del cursor */
+body {
+  cursor: none; /* Ocultar el cursor predeterminado */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(34,139,34,0.6);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+}
+
+body:hover::before {
+  background: rgba(34,139,34,0.3);
+}
+
+/* Seguimiento del cursor */
+body::after {
+  content: '';
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(34,139,34,0.6);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.6s;
+}
+
+body:hover::after {
+  opacity: 0;
+}
+
+
+body::before,
+body::after {
+  left: var(--cursorX);
+  top: var(--cursorY);
+}
+
+/* Ajuste del tamaño del ícono de usuario */
+.navbar-nav .nav-link .fas {
+  color: white !important;
+  font-size: 1.5rem; /* Ajusta el tamaño del ícono según sea necesario */
+}
+
+/* Establece el gutter horizontal a 0 */
+.container-fluid {
   --bs-gutter-x: 0; /* Establece el gutter horizontal a 0 */
 }

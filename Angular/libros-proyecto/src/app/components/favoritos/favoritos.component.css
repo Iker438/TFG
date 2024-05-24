@@ -1,10 +1,12 @@
 /* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff; /* AliceBlue background */
-    color: #333;
-    margin: 0;
-    padding: 0;
+body,html {
+  font-family: 'Times New Roman', Times, serif;
+
+  background: linear-gradient(to bottom, #c5c6c7, #cdffd5); /* Sky blue with a touch of yellow */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
   }
   
   .container {

@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 hoverable-container">
   <!-- Buscador -->
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Buscar libros..." [(ngModel)]="searchQuery">
@@ -54,7 +54,7 @@
       <button type="button" class="btn btn-danger" [ngClass]="{'btn-success': isFavorite(selectedBook)}" (click)="toggleFavorite(selectedBook)">
         {{ isFavorite(selectedBook) ? 'Favorito' : 'Agregar a Favoritos' }}
       </button>
-      <button type="button" class="btn btn-primary" (click)="openPdf(selectedBook?.pdf)">Leer (Mirada Lasciva)</button>
+      <button type="button" class="btn btn-primary" (click)="openPdf(selectedBook?.pdf)">Leer</button>
     </div>
   </ng-template>
 </div>
