@@ -1,80 +1,189 @@
-/* General Styles */
-body,html {
+/* Estilos globales para toda la página */
+html, body {
   font-family: 'Times New Roman', Times, serif;
-
   background: linear-gradient(to bottom, #c5c6c7, #cdffd5); /* Sky blue with a touch of yellow */
   color: #333;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    color: #0056b3; /* Strong blue color */
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  /* Card Styles */
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-img-top {
-    max-height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .card-body {
-    padding: 15px;
-    background-color: white;
-  }
-  
-  .card-title {
-    font-size: 1.2em;
-    color: #333;
-    margin: 0;
-  }
-  
-  .card-text {
-    color: #666;
-    font-size: 0.9em;
-  }
-  
-  /* Button Styles */
-  .btn {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-  }
-  
-  .btn-primary {
-    background-color: #007bff; /* Primary blue */
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3; /* Strong blue */
-  }
-  
+}
+
+table {
+  box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 9px 0px -3px rgba(0,0,0,0.75) !important;
+}
+
+.table-group-divider {
+  color: #483838 !important;
+}
+
+tbody {
+  font-size: 1.2rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #C98474;
+}
+
+.table-striped tbody tr:not(odd) {
+  background-color: #F2D388;
+}
+
+.table-striped tbody tr:nth-of-type(odd):hover {
+  background-color: #A7D2CB !important;
+}
+
+.myThead {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  background-color: #874C62;
+  color: white;
+  font-weight: 700;
+}
+
+.bi {
+  font-size: 1.1rem;
+}
+
+.bi:hover {
+  transition: 0.4s;
+}
+
+.card {
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+  -webkit-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+  -moz-box-shadow: 3px 5px 8px 6px rgba(242,211,136,1);
+}
+
+.bi-plus-circle-fill {
+  color: #C98474;
+}
+
+.text-bg-dark {
+  background-color: rgba(135, 76, 98, 0.651) !important;
+}
+
+.modal {
+  font-family: Helvetica, sans-serif;
+}
+
+.navPagination ul li button {
+  background: #874C62;
+  color: #C98474;
+}
+
+.navPagination ul li button:hover {
+  background: #C98474;
+  color: #874C62;
+}
+
+/* Complementos adicionales */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-header {
+  background-color: #874C62;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.card-body {
+  background-color: #f0f8ff; /* AliceBlue background */
+}
+
+.card-footer {
+  background-color: #f0f8ff;
+  border-top: 1px solid #ccc;
+}
+
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea.form-control:focus {
+  border-color: #874C62;
+  outline: none;
+  box-shadow: 0 0 5px rgba(135, 76, 98, 0.2);
+}
+
+button.btn-success {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-success:hover {
+  background-color: #218838;
+}
+
+button.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-info:hover {
+  background-color: #138496;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Iconos para los botones de editar y eliminar */
+button.btn-info i,
+button.btn-danger i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+button.btn-info i.bi-pencil-square {
+  color: white;
+}
+
+button.btn-danger i.bi-trash-fill {
+  color: white;
+}
+
+.mb-2 {
+  margin-bottom: 0 !important;
+}

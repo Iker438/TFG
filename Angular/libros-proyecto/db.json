@@ -183,6 +183,22 @@
       "email": "ikergarnica340@gmail.com",
       "phone": "66666666",
       "image": "https://lh3.googleusercontent.com/a/ACg8ocIZ9yBYG5n_lzmUbHH3dOUoWQBkaRrgeqy3FAno9tMkr_jOLkg=s96-c"
+    },
+    {
+      "id": 22,
+      "username": "Antonio Aromy Trujillo Pardo",
+      "role": "user",
+      "email": "antonio25033006@gmail.com",
+      "phone": "",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocJneCq0kw9_1XqXxI1MFZaV0T2GF15Ken6GoEDgdhIrr5y_Hmu2=s96-c"
+    },
+    {
+      "id": 23,
+      "username": "User",
+      "role": "user",
+      "email": "prueba@gmail.com",
+      "phone": "",
+      "image": ""
     }
   ],
   "comments": [
