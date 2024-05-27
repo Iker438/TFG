@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Food } from '../../model/game/food';
 import { Snake } from '../../model/game/snake';
 import { outsideGrid } from '../../model/game/gameboard-grid.util';

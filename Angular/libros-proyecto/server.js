@@ -1,21 +1,27 @@
-require('dotenv').config();
 const jsonServer = require('json-server');
 const cors = require('cors');
 const path = require('path');
 const express = require('express');
-const nodemailer = require('nodemailer');
+const admin = require('firebase-admin');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const fs = require('fs');
+const nodemailer = require('nodemailer');
 
-const app = express(); // Usamos 'app' en lugar de 'server' para la instancia de Express
-const routerDb = jsonServer.router('db.json'); // Archivo para datos de DB
-const routerLibros = jsonServer.router('libros.json'); // Archivo para datos de libros
+// Inicializa Firebase Admin SDK
+const serviceAccount = require('./path/to/your/firebaseConfig.json'); // Cambia esto a la ruta de tu archivo JSON de Firebase
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const app = express();
+const routerDb = jsonServer.router('db.json');
+const routerLibros = jsonServer.router('libros.json');
 const middlewares = jsonServer.defaults({
   static: path.join(__dirname, 'src/assets')
 });
 
-// Configurar CORS para permitir el encabezado Authorization
 const corsOptions = {
   origin: '*',
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -29,7 +35,11 @@ app.use(middlewares);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    const dir = 'src/assets/almacen/';
+    if (!fs.existsSync(dir)){
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    cb(null, dir);
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname);
@@ -38,29 +48,58 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,  // Tu correo electrónico de Gmail
-    pass: process.env.EMAIL_PASS   // Tu contraseña de Gmail
+// Middleware para verificar el token de Firebase
+async function verifyToken(req, res, next) {
+  const idToken = req.headers.authorization?.split('Bearer ')[1];
+  if (!idToken) {
+    return res.status(401).send('Unauthorized');
   }
-});
+
+  try {
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    req.user = decodedToken;
+    next();
+  } catch (error) {
+    return res.status(401).send('Unauthorized');
+  }
+}
 
 // Endpoint para enviar correos
-app.post('/enviar-correo', upload.single('file'), (req, res) => {
+app.post('/enviar-correo', [verifyToken, upload.single('file')], (req, res) => {
+  const userEmail = req.user.email; // Obtiene el email del usuario autenticado
+
   const mailOptions = {
-    from: req.body.email,
-    to: 'ikergarnica340@gmail.com',  // Correo de destino fijo
+    from: userEmail, // Correo del usuario autenticado
+    to: 'ikergarnica340@gmail.com', // Correo de destino fijo
     subject: `Contacto: ${req.body.tipo}`,
     text: req.body.mensaje,
-    attachments: req.file ? [{ filename: req.file.originalname, content: req.file.buffer }] : []
+    attachments: req.file ? [{
+      filename: req.file.originalname,
+      path: req.file.path
+    }] : []
   };
+
+  // Configura el transporter para usar OAuth2
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: userEmail,
+      // Para usar OAuth2, necesitas un refresh token y un client ID y secret
+      // Estos valores deben ser obtenidos durante el proceso de OAuth2
+      // No se incluirán aquí por razones de seguridad
+      clientId: 'your-client-id',
+      clientSecret: 'your-client-secret',
+      refreshToken: 'your-refresh-token',
+      accessToken: 'your-access-token' // Obtén el token de acceso dinámicamente
+    }
+  });
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res.status(500).send(error.toString());
+      return res.status(500).send('Error al enviar el correo: ' + error.toString());
     }
-    res.status(200).send('Email sent: ' + info.response);
+    res.status(200).send('Correo enviado: ' + info.response);
   });
 });
 

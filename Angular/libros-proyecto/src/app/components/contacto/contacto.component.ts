@@ -1,20 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
+import { AuthService } from '../../services/user.service';
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
-export class ContactoComponent {
-  contacto = {
-    tipo: '',
-    mensaje: '',
-    email: 'usuario@example.com' // Puedes agregar el email del usuario si es necesario
-  };
+export class ContactoComponent implements OnInit {
+  contactoForm: FormGroup;
   selectedFile: File | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private authService: AuthService // Inyecta el servicio de autenticación
+  ) {
+    this.contactoForm = this.fb.group({
+      tipo: ['', Validators.required],
+      mensaje: ['', Validators.required],
+      email: [{ value: '', disabled: true }, [Validators.required, Validators.email]]
+    });
+  }
+
+  ngOnInit() {
+    this.authService.getCurrentUserObservable().subscribe(user => {
+      if (user) {
+        this.contactoForm.get('email')?.setValue(user.email || '');
+      }
+    });
+  }
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -22,9 +37,9 @@ export class ContactoComponent {
 
   onSubmit() {
     const formData = new FormData();
-    formData.append('tipo', this.contacto.tipo);
-    formData.append('mensaje', this.contacto.mensaje);
-    formData.append('email', this.contacto.email);
+    formData.append('tipo', this.contactoForm.get('tipo')?.value);
+    formData.append('mensaje', this.contactoForm.get('mensaje')?.value);
+    formData.append('email', this.contactoForm.get('email')?.value);
 
     if (this.selectedFile) {
       formData.append('file', this.selectedFile);
@@ -35,12 +50,7 @@ export class ContactoComponent {
         response => {
           console.log('Correo enviado exitosamente', response);
           alert('Correo enviado');
-          // Resetear el formulario
-          this.contacto = {
-            tipo: '',
-            mensaje: '',
-            email: 'usuario@example.com'
-          };
+          this.contactoForm.reset();
           this.selectedFile = null;
         },
         error => {

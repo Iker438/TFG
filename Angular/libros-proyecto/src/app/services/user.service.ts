@@ -1,8 +1,7 @@
-// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInAnonymously, User as FirebaseUser } from '@angular/fire/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { UserService } from './auht.service'; // Corrige la importación de tu servicio de usuario
+import { UserService } from './auht.service';
 import { switchMap, take } from 'rxjs/operators';
 import { FirebaseUserExtended } from '../model/firebase-user.model';
 import { User } from '../model/user';
@@ -13,14 +12,15 @@ import { User } from '../model/user';
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string | null = null;
-  private currentUser: FirebaseUserExtended | null = null;
+  private currentUser = new BehaviorSubject<FirebaseUserExtended | null>(null);
   private userImage = new BehaviorSubject<string | null>(null);
 
   constructor(private auth: Auth, private userService: UserService) {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.loggedIn.next(true);
-        this.currentUser = user as FirebaseUserExtended; // Casting para utilizar la interfaz extendida
+        const extendedUser = user as FirebaseUserExtended;
+        this.currentUser.next(extendedUser);
         this.userImage.next(user.photoURL);
         user.getIdToken().then(token => this.token = token);
         if (!user.isAnonymous) {
@@ -48,7 +48,7 @@ export class AuthService {
       } else {
         this.loggedIn.next(false);
         this.token = null;
-        this.currentUser = null;
+        this.currentUser.next(null);
         this.userImage.next(null);
       }
     });
@@ -78,7 +78,7 @@ export class AuthService {
 
   loginAsGuest() {
     return signInAnonymously(this.auth).then(userCredential => {
-      this.currentUser = userCredential.user as FirebaseUserExtended;
+      this.currentUser.next(userCredential.user as FirebaseUserExtended);
       this.loggedIn.next(true);
       return userCredential;
     });
@@ -87,6 +87,7 @@ export class AuthService {
   logout() {
     return signOut(this.auth).then(() => {
       this.token = null;
+      this.currentUser.next(null);
     });
   }
 
@@ -99,13 +100,17 @@ export class AuthService {
   }
 
   getCurrentUser(): FirebaseUserExtended | null {
-    return this.currentUser;
+    return this.currentUser.value;
+  }
+
+  getCurrentUserObservable(): Observable<FirebaseUserExtended | null> {
+    return this.currentUser.asObservable();
   }
 
   setUserImage(imageUrl: string): void {
-    if (this.currentUser) {
+    if (this.currentUser.value) {
       this.userImage.next(imageUrl);
-      this.currentUser.updateProfile({ photoURL: imageUrl });
+      this.currentUser.value.updateProfile({ photoURL: imageUrl });
     }
   }
 
