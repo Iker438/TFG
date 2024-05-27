@@ -1,0 +1,165 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "Romeo y Julieta",
+        "description": "Romeo y Julieta cuenta la historia de dos jóvenes que, a pesar de la oposición de sus familiares, rivales entre sí, deciden casarse de forma ilegal y vivir juntos ",
+        "genre": "Romance",
+        "image": "assets/portadalibros/Romance/romeo_julieta.jpeg",
+        "pdf": "assets/libros/Romance/romeoy_julieta.pdf"
+      },
+      {
+        "id": 2,
+        "title": "50 Sombras de Grey",
+        "description": "Anastasia Steele es una joven estudiante de literatura que recibe el encargo de entrevistar el joven empresario Christian Grey. La inexperta e inocente Ana queda cautivada y su deseo incontrolable se desborda por las sorprendentes prácticas eróticas de Grey, que la llevan a descubrir los límites, o no, de sus deseos.",
+        "genre": "Romance",
+        "image": "assets/portadalibros/Romance/50_sombras.jpg",
+        "pdf": "assets/libros/Romance/50_sombras_de_grey.pdf"
+      },
+      {
+        "id": 3,
+        "title": "Homero Odisea",
+        "description": "La Odisea narra la historia del héroe griego Odiseo, Ulises, el viaje de regreso a su reino de Ítaca donde le esperan su esposa Penélope, rodeada de pretendiente, y su hijo Telémaco. Un trayecto de aproximadamente un mes de navegación que se alarga aproximadamente diez años, los mismos que duró la guerra de Troya.",
+        "genre": "Aventura",
+        "image": "assets/portadalibros/Aventura/odisea.jpg",
+        "pdf": "assets/libros/Aventura/odisea.pdf"
+      },
+      {
+        "id": 4,
+        "title": "Viaje al Centro de la Tierra",
+        "description": "El joven Axel y su tío, el profesor Otto, emprenden un viaje fantástico al interior de la Tierra. Y todo ello a partir del descubrimiento de unos signos misteriosos hallados entre las páginas de un libro antiguo.",
+        "genre": "Aventura",
+        "image": "assets/portadalibros/Aventura/viaje_centro_tierra.jpg",
+        "pdf": "assets/libros/Aventura/viaje_centro_tierra.pdf"
+      },
+      {
+        "id": 5,
+        "title": "Stephen King el Resplandor",
+        "description": "relata la historia de Jack Torrance, un exprofesor que acepta un puesto como vigilante de invierno en un solitario hotel de alta montaña para ocuparse del mantenimiento. Al poco tiempo de haberse instalado allí junto con su esposa y su hijo, empieza a sufrir inquietantes trastornos de personalidad.",
+        "genre": "Terror",
+        "image": "assets/portadalibros/Terror/resplandor.jpg",
+        "pdf": "assets/libros/Terror/el_resplandor.pdf"
+      },
+      {
+        "id": 6,
+        "title": "La LLamada de Cthulhu",
+        "description": "Francis Wayland Thurston, relata el descubrimiento de varias notas dejadas por su tío abuelo, George Gammell Angell, un destacado profesor de lenguas semíticas de la Universidad de Brown en Providence, Rhode Island, que murió durante el invierno de 1926 tras ser empujado por un marinero.",
+        "genre": "Terror",
+        "image": "assets/portadalibros/Terror/llamada.jpg",
+        "pdf": "assets/libros/Terror/llamada_de_cthulhu.pdf"
+      },
+      {
+        "id": 7,
+        "title": "Historia de España para Dummies",
+        "description": "¿Quién dice que la historia es aburrida? Basta acercarse  a la de España para ver que no es así, que se trata de una auténtica aventura que tiene de todo: emoción, drama, épica e inluso comedia.",
+        "genre": "Historia",
+        "image": "assets/portadalibros/Historia/historia_espana_tontos.jpg",
+        "pdf": "assets/libros/Historia/historia_espanaparatontos.pdf"
+      },
+      {
+        "id": 8,
+        "title": "El gran libro de la MITOLOGÍA GRIEGA",
+        "description": "Los personajes, las historias y los temas de la mitología griega son, probablemente, el legado más importante de la antigua Grecia. Robin Hard hace en este libro un completo recorrido por el mismo, desde los orígenes del Caos y la Noche. Describe las leyendas de los hijos de Cronos y los primeros mitos populares que surgieron de la conciencia griega; continúa con la guerra con los Titanes y describe todas las aventuras de los dioses del Olimpo, así como las actividades y asociaciones de cada dios y diosa, y las de todos los dioses menores y deidades extranjeras relacionadas con ellos. Sin olvidar las historias de los héroes: Heracles, Teseo, Cadmo, Edipo, Jasón y los argonautas y, sobre todo, los protagonistas de la guerra de Troya.",
+        "genre": "Historia",
+        "image": "assets/portadalibros/Historia/mitolofia_griega.jpeg",
+        "pdf": "assets/libros/Historia/libromitologia.pdf"
+      },
+      {
+        "id": 9,
+        "title": "Karlos Arguiñano: 1000 Recetas de oro",
+        "description": "Tras siete décadas de vida y medio siglo cocinando, Karlos Arguiñano nos brinda un amplio recetario que configura el mejor testimonio de su experiencia y amor por la gastronomía. Mil recetas que son un homenaje a todos los elementos que le han llevado a convertirse en el cocinero de referencia de millones de hogares.",
+        "genre": "Recetas",
+        "image": "assets/portadalibros/Recetas/receta_carlos.jpeg",
+        "pdf": "assets/libros/Recetas/1000-recetas-de-oro-karlos-arguinano.pdf"
+      },
+      {
+        "id": 10,
+        "title": "Escuela de cocina japonesa",
+        "description": "Los secretos de la cocina japonesa de la mano de Mutsuo Kowaki, un cocinero conocedor de las gastronomías japonesa y mediterránea. Esta propuesta incluye las principales tecnicas y preparaciones de base empleadas en la cocina japonesa, con fotografías y textos paso a paso, además de un conjunto de recetas, desde las más tradicionales a otras innovadoras y sabrosas, clasificadas en función de los distintos metodos de cocción: fritos, al vapor, estofados, arroces, postres, fideos, sushi y sashimi a base de pescado crudo etc ... , descubre los secretos de una cocina que tanto fascina en occidente: tempura de langostinos y verduras; brochetas yakitori; onigiri; tamagoyaki o tortilla japonesa; estofado sukiyaki; sopa miso de calabacín, setas shimeji y tofu frito; udon con curry japones; daifuku de fresa y nata, entre muchos otros, ya al alcance de todo el mundo.",
+        "genre": "Recetas",
+        "image": "assets/portadalibros/Recetas/cocina_japonesa.jpg",
+        "pdf": "assets/libros/Recetas/escuela-de-cocina-japonesa.pdf"
+      },
+      {
+        "id": 11,
+        "title": "Superman conoce a Sanón Fierro, 'El Hombre de Hierro'",
+        "description": "Uno de los primeros comics de la saga de Superman.",
+        "genre": "Cuentos y Comics",
+        "image": "assets/portadalibros/Cuentos/superman1.jpeg",
+        "pdf": "assets/libros/Cuentos_y_Comics/superman_n1.pdf"
+      },
+      {
+        "id": 12,
+        "title": "Todos los cuentos de los hermanos Grimm",
+        "description": "Recopilación de todos los cuentos de los hermanos Grimm. Reflejo de una época de cambios trascendentales en la ideología europea.",
+        "genre": "Cuentos y Comics",
+        "image": "assets/portadalibros/Cuentos/cuentos_hermanos_g.jpg",
+        "pdf": "assets/libros/Cuentos_y_Comics/todoscuentoshermanos_g.pdf"
+      },
+      {
+        "id": 13,
+        "title": "1984",
+        "description": "1984 es la antiutopía o distopía más célebre de todas cuantas fueron escritas durante la primera mitad del siglo XX. En ella, Orwell presenta un futuro en el que una dictadura totalitaria interfiere hasta tal punto en la vida privada de los ciudadanos que resulta imposible escapar a su control.",
+        "genre": "Fantasia y Ciencia Ficción",
+        "image": "assets/portadalibros/Fantasia_y_Ciencia_Ficcion/1984.jpg",
+        "pdf": "assets/libros/Fantasia_y_Ciencia_Ficcion/1984.pdf"
+      },
+      {
+        "id": 14,
+        "title": "Harry Potter y el misterio del príncipe ",
+        "description": "Con dieciséis años cumplidos, Harry inicia el sexto curso en Hogwarts en medio de terribles acontecimientos que asolan Inglaterra. Elegido capitán del equipo de quidditch, los ensayos, los exámenes y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad que protegen la escuela, dos alumnos son brutalmente atacados. Dumbledore sabe que se acerca el momento, anunciado por la Profecía, en que Harry y Voldemort se enfrentarían a muerte: «El único con poder para vencer al Señor Tenebroso se acerca... Uno de los dos debe morir a manos del otro, pues ninguno de los dos podrá vivir mientras siga el otro con vida» El anciano director solicitará la ayuda de Harry y juntos emprenderán peligrosos viajes para intentar debilitar al enemigo, para lo cual el joven mago contará con un viejo libro de pociones perteneciente a un misterioso personaje, alguien que se hace llamar Príncipe Mestizo.",
+        "genre": "Fantasia y Ciencia Ficción",
+        "image": "assets/portadalibros/Fantasia_y_Ciencia_Ficcion/harrrypotter_principemestizo.jpg",
+        "pdf": "assets/libros/Fantasia_y_Ciencia_Ficcion/harry_potter_principemestizo.pdf"
+      },
+      {
+        "id": 15,
+        "title": "Almudena",
+        "description": "El capítulo final de una bella y larga historia de amor. Cuando Luis García Montero escribió Un año y tres meses («Una conmovedora lección de duelo» Luis Bagué Quílez, El País; «Una tabla de salvación ante el naufragio» Josep Cuní, El Periódico) para contar la convalecencia y la despedida de su mujer, la escritora Almudena Grandes, en realidad había compuesto el capítulo final de una larga historia de amor que se inició muchos años antes y que había ido contando, como en un hilo rojo, en composiciones dedicadas a ella en sus sucesivos libros de poesía.   Almudena reúne los poemas de amor que el autor le fue dedicando a su mujer entre 1994 y 2021, y puede leerse como una historia completa que va del enamoramiento en Completamente viernes, hasta la vida en pareja de La intimidad de la serpiente, los afectos de madurez de Vista cansada, los compromisos compartidos de Un invierno propio, la complicidad de A puerta cerrada, y la resistencia en común de No puedes ser así. Breve historia del mundo.",
+        "genre": "Poesía",
+        "image": "assets/portadalibros/Poesia/almudena.jpeg",
+        "pdf": "assets/libros/Poesia/almudena.pdf"
+      },
+      {
+        "id": 16,
+        "title": "Amanecer",
+        "description": "Una preciosa continuación a Sempiterno, su cautivador libro objeto, tras la que Defreds nos propone su prolongación bajo el signo del Amanecer. Organizado por partes tituladas como los libros que ha ido publicando el autor hasta la fecha, Defreds rinde un particular homenaje al devenir de su vida y su trayectoria, desde aquel Casi sin querer, que lo descubrió al mundo, como el reciente y delicioso Siempre.  Cada línea de sus escritos señala su evolución como persona y como creador, sus afectos, inquietudes, ilusiones y el reto de cada día, acompañados por las ilustraciones de Naranjalidad que tanto gustan a sus seguidores. En palabras del autor: «El Amanecer nuestro de cada día debe ser Sempiterno». Nos aguardan sus palabras cuajadas de delicadeza y sentimiento. Afectividad al cien por cien..",
+        "genre": "Poesía",
+        "image": "assets/portadalibros/Poesia/amanecer.jpeg",
+        "pdf": "assets/libros/Poesia/amanecer.pdf"
+      },
+      {
+        "id": 17,
+        "title": "Diccionario de la Lengua Española",
+        "description": "Vigésima primera edición del Diccionario de la Real Academia Española de la Lengua (v15.0).",
+        "genre": "Educación",
+        "image": "assets/portadalibros/Educacion/diccionario_espanol.jpeg",
+        "pdf": "assets/libros/Educacion/diccionario_lengua_espanola.pdf"
+      },
+      {
+        "id": 18,
+        "title": "Ganong Fisiología médica",
+        "description": "La medicina es una ciencia en constante desarrollo. Conforme surjan nuevos conocimientos, se requerirán cambios de la terapéutica. El (los) autor(es) y los editores se han esforzado para que los cuadros de dosifi cación medicamentosa sean precisos y acordes con lo establecido en la fecha de publicación. Sin embargo, ante los posibles errores humanos y cambios en la medicina, ni los editores ni cualquier otra persona que haya participado en la preparación de la obra garantizan que la información contenida en ella sea precisa o completa, tampoco son responsables de errores u omisiones, ni de los resultados que con dicha información se obtengan.",
+        "genre": "Educación",
+        "image": "assets/portadalibros/Educacion/fisiologia_medicina.jpeg",
+        "pdf": "assets/libros/Educacion/fisiologia_humana.pdf"
+      },
+      {
+        "id": 19,
+        "title": "El Codigo de Dios",
+        "description": "El Código de Dios es el resultado de 12 años de investigación. No pretende ser la solución cuando nos enfrentamos a los mayores retos de la ciencia, la tecnológia y la paz en la en la historia de nuestra especie. En una época en que todo se pone en énfasis en nuestra diferencias simplemente pretende ser un punto de partida.",
+        "genre": "Religion",
+        "image": "assets/portadalibros/Religion/codigo_dios.jpg",
+        "pdf": "assets/libros/Religion/111019-codigo-de-dios.pdf"
+      },
+      {
+        "id": 20,
+        "title": "Las Religiones del Mundo",
+        "description": "He aquí una obra maestra, considerada la mejor introducción, y también la más asequible, a las grandes tradiciones religiosas del mundo. Las religiones del mundo es un trabajo de más de treinta años que tuvo su embrión en una serie de la televisión pública norteamericana, se convirtió luego en el best-seller Las religiones del hombre -del que se vendieron más de dos millones de ejemplares-, y que el autor ha revisado profundamente para la actual edición.",
+        "genre": "Religion",
+        "image": "assets/portadalibros/Religion/diferentes_religiones.jpeg",
+        "pdf": "assets/libros/Religion/las-religiones-del-mundo.pdf"
+      }
+    ]
+  }
+  
